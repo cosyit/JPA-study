@@ -10,8 +10,10 @@ public class Main {
     public static void main(String[] args) {
         //1.创建EntityManagerFactory
         String persistenceUnitName = "myJPA";
+
+        //EntityManagerFactory 对应Hibernate中的SessionFactory.
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(persistenceUnitName);
-        //2.创建EntityManager
+        //2.创建EntityManager  [对应Hibernate 中的Session ]
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         //3.开启事务
@@ -29,9 +31,7 @@ public class Main {
         transaction.commit();
 
         //6.关闭EntityManager
-
         entityManager.close();
-
         //7.关闭EntityManagerFactory.
         entityManagerFactory.close();
     }

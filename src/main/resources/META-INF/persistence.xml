@@ -13,11 +13,16 @@
 
         <properties>
             <!-- 连接数据库的基本信息 -->
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jfinal_demo?useSSL=false&amp;serverTimezone=Asia/Shanghai"/>
-            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="root"/>
+            <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jfinal_demo?useSSL=false&amp;serverTimezone=Asia/Shanghai"/>-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jfinal_demo?useSSL=false&amp;serverTimezone=Asia/Shanghai"/>
+           <!-- <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>-->
+            <property name="javax.persistence.jdbc.Driver" value="com.mysql.cj.jdbc.Driver"/>
+            <!--<property name="hibernate.connection.username" value="root"/>-->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+         <!--   <property name="hibernate.connection.password" value="root"/>-->
+            <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="hibernate.archive.autodetection" value="class"/>
+
             <!-- 配置JPA 实现产品的基本属性，配置hibernate 的基本属性 -->
             <!-- 自动显示SQL -->
             <property name="hibernate.show_sql" value="true"/>
